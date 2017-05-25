@@ -1,0 +1,2 @@
+-define(SERVICE_NAME, cfg).
+-define(SERVICE_MODULE, cfg_service).

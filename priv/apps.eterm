@@ -1,0 +1,86 @@
+%% [ {layer,         layer()}
+%% , {calls,         [layer()]}].
+%%
+%% [ {application, application()}
+%% , {owner,       Team::team_id()}
+%% , {api,         [module()]}
+%% , {modules,     [module()]}].
+%%
+%% [ {externals, [application()]}].
+%%
+%% -type layer()       :: string().
+%% -type application() :: atom().
+%% -type team_id()     :: core.
+
+[ {layer, "Test"}
+, {calls, [ "Interface"
+           , "Business"
+           , "Data"
+           , "System"
+           , "Utility"
+           ]}].
+
+[ {layer, "Interface"}
+, {calls, [ "Business"
+          , "Data"
+          , "System"
+          , "Utility"
+          ]}].
+
+[ {layer, "Business"}
+, {calls, [ "Data"
+          , "System"
+          , "Utility"
+          ]}].
+
+[ {layer, "Data"}
+, {calls, [ "System"
+          , "Utility"
+          ]}].
+
+[ {layer, "System"}
+, {calls, [ "Utility"
+          ]}].
+
+
+[ { application, olog}
+, { owner,       core}
+, { api,         [ olog
+                 ]}
+, {modules,      [ olog
+                 , olog_app
+                 , olog_sup
+                 ]}].
+
+[ {application, cfg}
+, {owner,       core}
+, {api,         [ cfg
+                ]}
+, {modules,     [ cfg
+                , cfg_app
+                , cfg_sup
+                ]}].
+
+[ {application, sappan}
+  , {owner,     core}
+  , {api,       [ sappan
+                ]}
+, {modules,     [ sappan
+                , sappan_app
+                , sappan_sup
+                ]}].
+
+[ {layer, "Utility"}
+, {calls, []
+  }].
+
+[ {application, cutils}
+  , {owner,     core}
+  , {api,       [ user_default
+                ]}
+  , {modules,   [ user_default
+                ]}].
+
+
+[ {externals,   [
+                ]}].

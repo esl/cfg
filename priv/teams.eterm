@@ -1,0 +1,2 @@
+{core,           [ {alarm_email, ["alarm@domain.com"]}
+                 ]}.

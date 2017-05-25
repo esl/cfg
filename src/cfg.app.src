@@ -1,0 +1,23 @@
+{application, cfg,
+  [ {description, "An OTP application"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {mod, { cfg_app, []}},
+    {applications,
+     [ kernel
+     , stdlib
+     , csi
+     ]},
+    {env,[ {apps_eterm, "apps.eterm"}
+         , {teams_eterm, "teams.eterm"}
+         ]},
+    {modules, [ cfg
+              , cfg_app
+              , cfg_service
+              , cfg_sup
+              ]},
+
+    {maintainers, []},
+    {licenses, []},
+    {links, []}
+ ]}.
